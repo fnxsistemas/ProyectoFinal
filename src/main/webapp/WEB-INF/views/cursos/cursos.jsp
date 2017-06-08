@@ -13,6 +13,9 @@
 <jsp:include page="../includes/header.jsp" />
 
 <main>
+	<!-- Enlace para crear personas. -->
+	<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso</a>
+	
 	<!-- Caja contenedor de la cabecera. -->
 	<div class="row cabecera_datos">
 		<span class="col-xs-1">Código.</span>
@@ -64,7 +67,7 @@
 	</c:choose>
 	
 	<!-- Enlace para crear personas. -->
-	<a class ="btn btn-primary" href="empresas/addEmpresa"> Añadir Nuevo Curso</a>
+	<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso</a>
 </main>
 
 <!-- Se incluye el pie del include 'footer.jsp' -->
