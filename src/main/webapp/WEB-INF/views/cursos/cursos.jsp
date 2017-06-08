@@ -15,8 +15,8 @@
 <main>
 	<!-- Caja contenedor de la cabecera. -->
 	<div class="row cabecera_datos">
-		<span class="col-xs-1"><spring:message code="curso.codigo" text="Código." /></span>
-		<span class="col-xs-3"><spring:message code="empresa.nombre" text="Nombre" /> </span>
+		<span class="col-xs-1">Código.</span>
+		<span class="col-xs-3">Nombre</span>
 	</div>
 	
 	<!-- Se comprueba si el listado de empresas no está vacio. 
@@ -26,9 +26,9 @@
 		<c:forEach var="curso" items="${listadoCursos}">
 			<div class="row lista_datos">
 				<!-- Celda con el codigo de la empresa. -->
-				<span class="col-xs-1">${empresa.codigo}</span>
+				<span class="col-xs-1">${curso.codigo}</span>
 				<!-- Celda con el nombre del empresa. -->
-				<span class="col-xs-3">${empresa.nombre}</span>
+				<span class="col-xs-3">${curso.nombre}</span>
 				
 				<span class="col-xs-1">		
 					<!-- Se redirecciona con la empresa pasada por parametro 
