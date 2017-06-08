@@ -1,0 +1,57 @@
+@CHARSET "UTF-8";
+/* Cuerpo de la página.*/
+body{
+	/* Color de fondo. */
+	background-color: #BBBFC8;	
+}
+/* Cuerpo de la página,líneas de listas,controles de formularios.*/
+body, td, li, input, select {
+	/* Familia de fuentes.*/
+    font-family: Arial, Helvetica, sans-serif;
+    /* tamaño de fuente. */
+    font-size: 13px;
+}
+
+/* Titulo Principal.*/
+h1{
+	/* Alineación a la izquierda.*/
+    text-align: left;
+    /* Negrita.*/
+    font-weight: bold;
+    /* Subbrayado.*/
+    text-decoration: underline;
+}
+
+/* Botones de barra de menu.*/
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+/* Cabecera de datos.*/
+.row.cabecera_datos {
+	/* Negrita.*/
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Cabecera de datos.*/
+.row.lista_datos {
+	/* Primera letra en mayusculas.*/
+    text-transform: capitalize;
+    /* Margen externo. (Aunque se ponga o lo separa del borde de la pantalla.)*/
+    margin: 0.0px 0;
+}
+
+/* En las listas de datos pintar lineas alternas. */
+.row.lista_datos:nth-child(2n) {
+    background-color: white;
+}
+
+input[type="text"]{
+	/* Primera letra en mayusculas.*/
+    text-transform: capitalize;
+}
+
+section{
+border-top: 2px Outset #369;
+}

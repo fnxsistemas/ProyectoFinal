@@ -25,8 +25,8 @@
 	<meta name="keywords" content="Proyecto Final.Ipartek.Raúl de Roba Junio 2017">  
 	<!-- Boostrap. De cara a los moviles se indica que considere todo el ancho de la pantalla de cara a 
 	     escalar el Css. -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">					
-		
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<!-- Es la primera etiqueta que busca los buscadores,por lo que conviene que sea descriptivo. -->
 	<title>Proyecto Final </title>
 	
@@ -74,10 +74,16 @@
 <body class="container-fluid">
 	<!-- Cabecera del contenido de la página. -->
 	<header class="row">
+	<!-- Logotipo. -->
+		<img class="col-xs-2 img-responsive" title="Logotipo" alt="Ipartek" 
+		     src="<c:url value='${webappRoot}/resources/images/logo-ipartek.png'/>">
+		     
 		<!-- Se asigna una caja para el titulo principal de cara a asignar propiedades Css al texto h1. -->
 		<span class="text-uppercase text-center">
 			<!-- Titulo principal. -->
 			<h1>Proyecto Final</h1>
 		</span>
+		
+		
 	</header>
 <!-- El cierre del /body se hace en cada página que incluya el 'header.jsp'. -->
