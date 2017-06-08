@@ -14,8 +14,8 @@ public class HomeController {
 	/* Metodo que gestionará las peticiones GET.*/
 	@RequestMapping(method=RequestMethod.GET)
 	public String home(){
-		/* Se redirige a 'index.jsp'*/
-		return "index";
+		/* Se redirige a 'cursos/cursos'*/
+		return "cursos/cursos";
 	}
 	
 }
