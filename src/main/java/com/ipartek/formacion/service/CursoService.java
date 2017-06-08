@@ -44,6 +44,16 @@ public class CursoService{
 		/* Se llama al metodo que devuelve la lista de personas de la clase DAO.*/
 		return cursoDAO.getAll();
 	}
+	
+	/**
+	 * @return List<Persona> Lista de Personas
+	 * 
+	 * <p> Metodo recoge la lista de las Personas en la Base de Datos. </p>
+	 */
+	public List<Curso> getAllFiltered(String codigo,String nombre) {
+		/* Se llama al metodo que devuelve la lista de personas de la clase DAO.*/
+		return cursoDAO.getAllFiltered(codigo,nombre);
+	}
 
 	/**
 	 * @param Identificador de la Persona

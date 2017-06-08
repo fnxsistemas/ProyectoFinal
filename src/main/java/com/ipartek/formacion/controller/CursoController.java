@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -77,6 +78,25 @@ public class CursoController {
 		List<Curso> cursos = null;
 		/* se carga la lista de la capa Service o Logica*/
 		cursos = cS.getAll();
+		/* Se asocia la lista al MAV.*/
+		mav.addObject("listadoCursos", cursos);
+		/* Se devuelve el objeto que gestionar las url y request.*/
+		return mav;		
+	}
+    
+    /* Gestiona las peticiones Get de curso.*/
+    @RequestMapping(value ="/filtrado",
+    		        method = RequestMethod.GET)
+	public ModelAndView getAllFiltered(@RequestParam("buscacodigo") String codigo,
+									   @RequestParam("buscanombre") String nombre){
+    	/* Se crea la instancia de la url home (/views/cursos/cursos.jsp)*/
+		mav = new ModelAndView("cursos/cursos");
+		/* Se crea la traza del metodo. */
+		logger.trace("cursos.cursoGetFiltered");
+		/* Se declara una lista para cargar las empresas.*/
+		List<Curso> cursos = null;
+		/* se carga la lista de la capa Service o Logica*/
+		cursos = cS.getAllFiltered(codigo,nombre);
 		/* Se asocia la lista al MAV.*/
 		mav.addObject("listadoCursos", cursos);
 		/* Se devuelve el objeto que gestionar las url y request.*/

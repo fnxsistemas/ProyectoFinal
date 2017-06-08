@@ -92,52 +92,53 @@
           			<!-- Logo de la empresa. -->
             		<a class="navbar-brand" href="#">${seccion}</a>
         		</div>
+        		
 				<!-- Caja para contener el menu. -->
 	    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	    			<ul class="nav navbar-nav">
 						<!-- Línea de la lista. Opción de gestión de Personas -->
 						<li>
-							<p> Codigo </p>
+							<sec:authorize access="isAuthenticated()">
+					    		<!-- Formulario que recoge el login. -->
+					        	<form method="GET" action="<c:url value='/cursos/filtrado'/>" commandName="curso">
+					        		<!-- Caja con el nombre de usuario. 
+					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
+					        		     SPRING_SECURITY. 
+					        		     El id de usuario y password ha de ser igual al declarado en 
+										spring-security-context.xml. -->
+					            	Código : <input name="buscacodigo" type="text" /> 
+					                Nombre : <input name="buscanombre" type="text" />
+					                <input type="submit" value="Busqueda" />
+					            </form>
+					       	</sec:authorize> 
 						</li>
-						<li>
-							<p> Nombre </p>
-						</li>
-				<li>
-					<!-- Enlace a la ayuda. 
-			     	Con c:url se envia una dirección relativa con respecto a la estructura 
-			     	del proyecto.
-			     	Se hace una petición a la carpeta de 'ayuda' que gestionará 
-			     	'AyudaController'. -->
-					<a class="btn btn-primary" href="<c:url value='/cursos/cursos'/>"> 
-					busqueda </a>
-				</li>
 				
-				<li>
-					<!-- Se comprueba si el acceso es anonimo. -->
-					<sec:authorize access="isAnonymous()">
-						<!-- Formulario que recoge el login. -->
-			        	<form method="POST" action="<c:url value='/login'/>">
-			        		<!-- Caja con el nombre de usuario. 
-			        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
-			        		     SPRING_SECURITY. 
-			        		     El id de usuario y password ha de ser igual al declarado en 
-								spring-security-context.xml. -->
-			            	Username: <input name="userId" type="text" 
-			            	                 value="${SPRING_SECURITY_LAST_USERNAME}" /> 
-			                Password: <input name="password" type="password" />
-			                <input type="submit" value="Login" />
-			            </form>
-			        </sec:authorize>
-			        <!-- Se comprueba si el acceso es con usuario. -->
-			    	<sec:authorize access="isAuthenticated()">
-			    		<!-- Se muestra boton para deslogear. -->	
-			        	<a class="btn btn-default" href="<c:url value="/logout" />">Logout</a>
-			       	</sec:authorize> 
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
+						<li>
+							<!-- Se comprueba si el acceso es anonimo. -->
+							<sec:authorize access="isAnonymous()">
+								<!-- Formulario que recoge el login. -->
+					        	<form method="POST" action="<c:url value='/login'/>">
+					        		<!-- Caja con el nombre de usuario. 
+					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
+					        		     SPRING_SECURITY. 
+					        		     El id de usuario y password ha de ser igual al declarado en 
+										spring-security-context.xml. -->
+					            	Username: <input name="userId" type="text" 
+					            	                 value="${SPRING_SECURITY_LAST_USERNAME}" /> 
+					                Password: <input name="password" type="password" />
+					                <input type="submit" value="Login" />
+					            </form>
+					        </sec:authorize>
+					        <!-- Se comprueba si el acceso es con usuario. -->
+					    	<sec:authorize access="isAuthenticated()">
+					    		<!-- Se muestra boton para deslogear. -->	
+					        	<a class="btn btn-default" href="<c:url value="/logout" />">Logout</a>
+					       	</sec:authorize> 
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 		
 		

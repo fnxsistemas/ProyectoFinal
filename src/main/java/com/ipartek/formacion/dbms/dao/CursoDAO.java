@@ -109,6 +109,34 @@ public class CursoDAO {
 		/* Se devuelve la lista de empresas.*/
 		return cursos;
 	}
+	
+	/* Metodo que recoger la lista de los personas recogida de la base de datos 
+	 * en función de la estructura indicada en las clases Mapper.*/
+	public List<Curso> getAllFiltered(String codigo,String nombre) {
+		/* Se declara la Sql con la que extraer los datos las personas,
+		 * mediante una llamada al procedimiento encapsulado. */
+
+		final String SQL ="CALL cursoGetAllFiltered('"  + codigo + "','" +nombre + "');";
+		
+		/* Se declara la lista donde recoger los personas.*/
+		List<Curso> cursos = null;
+		
+		/* Se monta estrcutura para capturar excepciones.*/
+		try{
+			/* Se carga la lista de pesonas de la base de datos.*/		
+			cursos = template.query(SQL, new CursoMapper());
+			/* Se traza la captura de la lista capturando el numero de registros.*/
+			logger.info("Tamaño lista:"+ cursos.size());
+		/* Se recoge la excepción si no recogemos valores de pesonas.*/
+		}catch(EmptyResultDataAccessException e){
+			/* Se devuelve una lista vacia.*/
+			cursos = new ArrayList<Curso>();
+			/* Se traza la captura de la lista vacia con el procedimiento encapsulado. */
+			logger.info("Sin Datos en  " + SQL);
+		}
+		/* Se devuelve la lista de empresas.*/
+		return cursos;
+	}
 
 	/* Metodo que busca una persona en base al identificador pasado por parametro.*/
 	public Curso getById(int id) {
