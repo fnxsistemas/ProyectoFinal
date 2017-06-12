@@ -93,57 +93,7 @@
 			     src="<c:url value='/resources/images/logo-lanbide.png'/>">
 		</div>
 		
-		<!-- Caja de navegación por las opciones de menú.-->
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-    			<!-- Caja para visualizar en moviles. -->
-        		<div class="navbar-header">
-          			<!-- Logo de la empresa. -->
-            		<a class="navbar-brand" href="#">${seccion}</a>
-        		</div>
-        		
-				<!-- Caja para contener el menu. -->
-	    		<div class="collapse navbar-collapse filtros" id="bs-example-navbar-collapse-1">
-	    			<ul class="nav navbar-nav">
-						<!-- Línea de la lista. Opción de gestión de Personas -->
-						<li>
-							<sec:authorize access="isAuthenticated()">
-					    		<!-- Formulario que recoge el login. -->
-					        	<form method="GET" action="<c:url value='/cursos/filtrado'/>" >
-					        		<!-- Caja con el nombre de usuario. 
-					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
-					        		     SPRING_SECURITY. 
-					        		     El id de usuario y password ha de ser igual al declarado en 
-										spring-security-context.xml. -->
-					            	Código : <input name="buscacodigo" type="text" /> 
-					                Nombre : <input name="buscanombre" type="text" />
-					                Busqueda Reducida : <input name="buscareducida" type="checkbox" checked=true/>
-					                <input type="submit" value="Busqueda" class="btn btn-primary"/>
-					            </form>
-					       	</sec:authorize> 
-						</li>
-				
-						<li>
-							<!-- Se comprueba si el acceso es anonimo. -->
-							<sec:authorize access="isAnonymous()">
-								<!-- Formulario que recoge el login. -->
-					        	<form method="POST" action="<c:url value='/login'/>">
-					        		<!-- Caja con el nombre de usuario. 
-					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
-					        		     SPRING_SECURITY. 
-					        		     El id de usuario y password ha de ser igual al declarado en 
-										spring-security-context.xml. -->
-					            	Username: <input name="userId" type="text" 
-					            	                 value="${SPRING_SECURITY_LAST_USERNAME}" /> 
-					                Password: <input name="password" type="password" />
-					                <input type="submit" value="Login" class="btn btn-primary" />
-					            </form>
-					        </sec:authorize>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		
 
 		
 		

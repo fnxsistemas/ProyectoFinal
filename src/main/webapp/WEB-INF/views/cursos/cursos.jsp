@@ -15,6 +15,71 @@
 <jsp:include page="../includes/header.jsp" />
 
 <main>
+<section>
+<!-- Caja de navegación por las opciones de menú.-->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+    			<!-- Caja para visualizar en moviles. -->
+        		<div class="navbar-header">
+          			<!-- Logo de la empresa. -->
+            		<a class="navbar-brand" href="#">${seccion}</a>
+        		</div>
+        		
+				<!-- Caja para contener el menu. -->
+	    		<div class="collapse navbar-collapse filtros" id="bs-example-navbar-collapse-1">
+	    			<ul class="nav navbar-nav">
+						<!-- Línea de la lista. Opción de gestión de Personas -->
+						<li>
+							<sec:authorize access="isAuthenticated()">
+					    		<!-- Formulario que recoge el login. -->
+					        	<form method="GET" action="<c:url value='/cursos/filtrado'/>" >
+					        		<!-- Caja con el nombre de usuario. 
+					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
+					        		     SPRING_SECURITY. 
+					        		     El id de usuario y password ha de ser igual al declarado en 
+										spring-security-context.xml. -->
+											<label > Código : 
+												<input name="buscacodigo" type="text" /> 
+											</label>
+											<label > Nombre : 
+					                			<input name="buscanombre" type="text" />
+					                		</label>
+					                		<label> Busqueda Reducida : 
+					                			<input name="buscareducida" type="checkbox" checked=true/>
+					                		 </label>
+					                		<input type="submit" value="Busqueda" class="btn btn-primary"/>
+					            </form>
+					       	</sec:authorize> 
+						</li>
+				
+						<li>
+							<!-- Se comprueba si el acceso es anonimo. -->
+							<sec:authorize access="isAnonymous()">
+								<!-- Formulario que recoge el login. -->
+					        	<form method="POST" action="<c:url value='/login'/>">
+					        		<!-- Caja con el nombre de usuario. 
+					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
+					        		     SPRING_SECURITY. 
+					        		     El id de usuario y password ha de ser igual al declarado en 
+										spring-security-context.xml. -->
+										<label > Username: 
+					            	 		<input name="userId" type="text" 
+					            	                 value="${SPRING_SECURITY_LAST_USERNAME}" /> 
+					            	    </label>
+					            	    <label path="password" > Password: 
+					                    	<input name="password" type="password" />
+					                    </label>
+					                <input type="submit" value="Login" class="btn btn-primary" />
+					                
+					            </form>
+					        </sec:authorize>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</section>
+	
 	<sec:authorize access="isAuthenticated()">
 		<!-- Enlace para crear cursos. -->
 		<a class ="btn btn-primary botonadd" href="cursos/addCurso"> Añadir Nuevo Curso </a>
