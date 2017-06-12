@@ -17,7 +17,7 @@
 	
 	<!-- Caja contenedor de la cabecera. -->
 	<div class="row cabecera_datos">
-		<span class="col-xs-2">Código.</span>
+		<span class="col-xs-2">Código</span>
 		<span class="col-xs-8">Nombre</span>
 	</div>
 	

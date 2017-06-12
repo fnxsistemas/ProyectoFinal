@@ -18,30 +18,34 @@
 		<!-- Control de campo oculto.En el path se recoge el atributo del objeto. -->
 			<form:hidden path="id" />
 			<!-- Caja para el codigo de la empresa. -->
-			<div>
+			<div class="row">
 				
 				<!-- Etiqueta y control para recoger codigo. -->
-				<form:label path="codigo"> Código : </form:label>
-				<form:input path="codigo" placeholder="Introduzca el Código de Curso" />
+				<form:label path="codigo" class="col-xs-1"> Código : </form:label>
+				<form:input path="codigo" class="col-xs-2" 
+				            placeholder="Introduzca el Código de Curso" />
 				<!-- Muestra el menaje cuando el atributo sea incorrecto. -->
 				<form:errors path="codigo" />
 			</div>
 			<!-- Caja para el nombre de la empresa. -->
-			<div>
+			<div class="row">
 				
 				<!-- Etiqueta y control para recoger nombre -->
-				<form:label path="nombre">Nombre : </form:label>			
-				<form:input path="nombre" placeholder="Introduzca el Nombre del Curso"/>
+				<form:label path="nombre" class="col-xs-1">Nombre : </form:label>			
+				<form:input path="nombre" class="col-xs-6" 
+				            placeholder="Introduzca el Nombre del Curso"/>
 				<!-- Muestra el menaje cuando el atributo sea incorrecto. -->
 				<form:errors path="nombre" />
 			</div>
 			
 			
-			
+			<c:set var = "etiqueta" scope = "page" value = "Crear"/>
 			<!-- Se comprueba si existe la empresa asociada al formulario. -->
-			<c:if test="${curso.id > 0}"> Editar </c:if>
+			<c:if test="${curso.id > 0}"> 
+				<c:set var = "etiqueta" scope = "page" value = "Editar"/>
+   			</c:if>
 			<!-- Se asigna el mensaje al boton del formulario. -->
-			<input class="btn btn-primary" type="submit" value="Crear">
+			<input class="btn btn-primary" type="submit" value="${etiqueta}" class="row">
 		</c:if>
 	</form:form>
 </main>
