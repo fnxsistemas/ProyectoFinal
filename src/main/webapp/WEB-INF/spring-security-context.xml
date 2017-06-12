@@ -13,7 +13,8 @@
     	<!-- Se da acceso a login.html. -->
         <intercept-url pattern="/login" access="permitAll" /> 
         <!-- Se da acceso al logo. -->
-        <intercept-url pattern="/resources/images/logo-ipartek.png" access="permitAll" /> 
+        <intercept-url pattern="/resources/images/logo-ipartek.png" access="permitAll" />
+        <intercept-url pattern="/resources/images/logo-lanbide.png" access="permitAll" />
         <!-- Se da acceso a la imagen de fondo. -->
         <intercept-url pattern="/resources/images/fondo.jpg" access="permitAll" />   
         <!-- Se da acceso a la ayuda. -->

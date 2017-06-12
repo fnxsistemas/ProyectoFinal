@@ -78,15 +78,20 @@
 	
 	<!-- Cabecera del contenido de la página. -->
 	<header class="row">
-	<!-- Logotipo. -->
-		<img class="col-xs-2 img-responsive" title="Logotipo" alt="Ipartek" 
-		     src="<c:url value='${webappRoot}/resources/images/logo-ipartek.png'/>">
-		     
-		<!-- Se asigna una caja para el titulo principal de cara a asignar propiedades Css al texto h1. -->
-		<span class="text-uppercase text-center">
-			<!-- Titulo principal. -->
-			<h1>Proyecto Final</h1>
-		</span>
+		<div class="row titulo">		
+			<!-- Logotipo. -->
+			<img class="col-xs-2 img-responsive" title="Ipartek" alt="Ipartek" 
+			     src="<c:url value='/resources/images/logo-ipartek.png'/>">
+			     
+			<!-- Se asigna una caja para el titulo principal de cara a asignar propiedades Css al texto h1. -->
+			<span class="text-uppercase text-center col-xs-8">
+				<!-- Titulo principal. -->
+				<h1 class = "text-center">Proyecto Final</h1>
+			</span>
+			
+			<img class="col-xs-2 img-responsive" title="Lanbide" alt="Lanbide" 
+			     src="<c:url value='/resources/images/logo-lanbide.png'/>">
+		</div>
 		
 		<!-- Caja de navegación por las opciones de menú.-->
 		<nav class="navbar navbar-default">
@@ -113,7 +118,7 @@
 					            	Código : <input name="buscacodigo" type="text" /> 
 					                Nombre : <input name="buscanombre" type="text" />
 					                Busqueda Reducida : <input name="buscareducida" type="checkbox" checked=true/>
-					                <input type="submit" value="Busqueda" />
+					                <input type="submit" value="Busqueda" class="btn btn-primary"/>
 					            </form>
 					       	</sec:authorize> 
 						</li>
@@ -131,7 +136,7 @@
 					            	Username: <input name="userId" type="text" 
 					            	                 value="${SPRING_SECURITY_LAST_USERNAME}" /> 
 					                Password: <input name="password" type="password" />
-					                <input type="submit" value="Login" />
+					                <input type="submit" value="Login" class="btn btn-primary" />
 					            </form>
 					        </sec:authorize>
 						</li>

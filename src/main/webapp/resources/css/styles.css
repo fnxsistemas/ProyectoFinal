@@ -14,12 +14,14 @@ body, td, li, input, select {
 
 /* Titulo Principal.*/
 h1{
-	/* Alineación a la izquierda.*/
-    text-align: left;
     /* Negrita.*/
     font-weight: bold;
     /* Subbrayado.*/
     text-decoration: underline;
+}
+
+.titulo {
+    margin: 5px !important;
 }
 
 /* Botones de barra de menu.*/
