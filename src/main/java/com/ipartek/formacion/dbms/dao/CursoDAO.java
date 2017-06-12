@@ -112,11 +112,12 @@ public class CursoDAO {
 	
 	/* Metodo que recoger la lista de los personas recogida de la base de datos 
 	 * en función de la estructura indicada en las clases Mapper.*/
-	public List<Curso> getAllFiltered(String codigo,String nombre) {
+	public List<Curso> getAllFiltered(String codigo,String nombre,Boolean reducida) {
 		/* Se declara la Sql con la que extraer los datos las personas,
 		 * mediante una llamada al procedimiento encapsulado. */
 
-		final String SQL ="CALL cursoGetAllFiltered('"  + codigo + "','" +nombre + "');";
+		final String SQL ="CALL cursoGetAllFiltered(" + 
+		                  "'"  + codigo + "','" +nombre + "','" + reducida +"');";
 		
 		/* Se declara la lista donde recoger los personas.*/
 		List<Curso> cursos = null;

@@ -100,7 +100,7 @@
 						<li>
 							<sec:authorize access="isAuthenticated()">
 					    		<!-- Formulario que recoge el login. -->
-					        	<form method="GET" action="<c:url value='/cursos/filtrado'/>" commandName="curso">
+					        	<form method="GET" action="<c:url value='/cursos/filtrado'/>" >
 					        		<!-- Caja con el nombre de usuario. 
 					        		     Con ${SPRING_SECURITY_LAST_USERNAME} se recoge el último usuario que ha guardado 
 					        		     SPRING_SECURITY. 
@@ -108,6 +108,7 @@
 										spring-security-context.xml. -->
 					            	Código : <input name="buscacodigo" type="text" /> 
 					                Nombre : <input name="buscanombre" type="text" />
+					                Busqueda Reducida : <input name="buscareducida" type="checkbox" checked=true/>
 					                <input type="submit" value="Busqueda" />
 					            </form>
 					       	</sec:authorize> 

@@ -50,9 +50,9 @@ public class CursoService{
 	 * 
 	 * <p> Metodo recoge la lista de las Personas en la Base de Datos. </p>
 	 */
-	public List<Curso> getAllFiltered(String codigo,String nombre) {
+	public List<Curso> getAllFiltered(String codigo,String nombre,Boolean reducida) {
 		/* Se llama al metodo que devuelve la lista de personas de la clase DAO.*/
-		return cursoDAO.getAllFiltered(codigo,nombre);
+		return cursoDAO.getAllFiltered(codigo,nombre,reducida);
 	}
 
 	/**

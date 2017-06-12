@@ -77,7 +77,7 @@ public class CursoController {
 		/* Se declara una lista para cargar las empresas.*/
 		List<Curso> cursos = null;
 		/* se carga la lista de la capa Service o Logica*/
-		cursos = cS.getAll();
+		cursos = cS.getAllFiltered("","",true);
 		/* Se asocia la lista al MAV.*/
 		mav.addObject("listadoCursos", cursos);
 		/* Se devuelve el objeto que gestionar las url y request.*/
@@ -88,7 +88,8 @@ public class CursoController {
     @RequestMapping(value ="/filtrado",
     		        method = RequestMethod.GET)
 	public ModelAndView getAllFiltered(@RequestParam("buscacodigo") String codigo,
-									   @RequestParam("buscanombre") String nombre){
+									   @RequestParam("buscanombre") String nombre,
+									   @RequestParam(name="buscareducida", required=false) Boolean reducida){
     	/* Se crea la instancia de la url home (/views/cursos/cursos.jsp)*/
 		mav = new ModelAndView("cursos/cursos");
 		/* Se crea la traza del metodo. */
@@ -96,7 +97,7 @@ public class CursoController {
 		/* Se declara una lista para cargar las empresas.*/
 		List<Curso> cursos = null;
 		/* se carga la lista de la capa Service o Logica*/
-		cursos = cS.getAllFiltered(codigo,nombre);
+		cursos = cS.getAllFiltered(codigo,nombre,reducida);
 		/* Se asocia la lista al MAV.*/
 		mav.addObject("listadoCursos", cursos);
 		/* Se devuelve el objeto que gestionar las url y request.*/
