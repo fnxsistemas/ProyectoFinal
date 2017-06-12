@@ -17,7 +17,7 @@
 <main>
 	<sec:authorize access="isAuthenticated()">
 		<!-- Enlace para crear cursos. -->
-		<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso </a>
+		<a class ="btn btn-primary botonadd" href="cursos/addCurso"> Añadir Nuevo Curso </a>
 	
 	 	
 	<!-- Caja contenedor de la cabecera. -->
@@ -71,7 +71,7 @@
 	</c:choose>
 	
 	<!-- Enlace para crear cursos. -->
-	<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso</a>
+	<a class ="btn btn-primary botonadd" href="cursos/addCurso"> Añadir Nuevo Curso</a>
 	
 		</sec:authorize> 
 </main>

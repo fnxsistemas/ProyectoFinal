@@ -103,7 +103,7 @@
         		</div>
         		
 				<!-- Caja para contener el menu. -->
-	    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    		<div class="collapse navbar-collapse filtros" id="bs-example-navbar-collapse-1">
 	    			<ul class="nav navbar-nav">
 						<!-- Línea de la lista. Opción de gestión de Personas -->
 						<li>
