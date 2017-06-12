@@ -4,6 +4,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <!-- Se declara la libreria de SPRING. --> 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<!-- Librerias de Spring Security. -->
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
 
 <!-- Se declara la página como html5. --> 
 <!DOCTYPE html>
@@ -72,6 +74,8 @@
 </head>
 <!-- Cuerpo de mensaje. Contenido para los usuarios. -->
 <body class="container-fluid">
+	
+	
 	<!-- Cabecera del contenido de la página. -->
 	<header class="row">
 	<!-- Logotipo. -->
@@ -130,11 +134,6 @@
 					                <input type="submit" value="Login" />
 					            </form>
 					        </sec:authorize>
-					        <!-- Se comprueba si el acceso es con usuario. -->
-					    	<sec:authorize access="isAuthenticated()">
-					    		<!-- Se muestra boton para deslogear. -->	
-					        	<a class="btn btn-default" href="<c:url value="/logout" />">Logout</a>
-					       	</sec:authorize> 
 						</li>
 					</ul>
 				</div>

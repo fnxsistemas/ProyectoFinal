@@ -1,47 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+ 
 <b:beans xmlns="http://www.springframework.org/schema/security"
          xmlns:b="http://www.springframework.org/schema/beans"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://www.springframework.org/schema/beans 
          http://www.springframework.org/schema/beans/spring-beans.xsd
          http://www.springframework.org/schema/security 
-         http://www.springframework.org/schema/security/spring-security.xsd">    
-    
+         http://www.springframework.org/schema/security/spring-security.xsd">
     <http auto-config="true">
-        
-    	<!-- Se da acceso a todas las peticiones. -->
+		<!-- Se da acceso a todas las peticiones. -->
         <intercept-url pattern="/" access="permitAll" /> 
     	<!-- Se da acceso a login.html. -->
-          <intercept-url pattern="/login" access="permitAll" />
+        <intercept-url pattern="/login" access="permitAll" /> 
         <!-- Se da acceso al logo. -->
         <intercept-url pattern="/resources/images/logo-ipartek.png" access="permitAll" /> 
         <!-- Se da acceso a la imagen de fondo. -->
         <intercept-url pattern="/resources/images/fondo.jpg" access="permitAll" />   
+        <!-- Se da acceso a la ayuda. -->
+        <intercept-url pattern="/views/ayuda/**" access="permitAll" />      
         <!-- Se da acceso a las hojas de estilo. -->
-        <intercept-url pattern="/resources/css/**" access="permitAll" />   
-    
+        <intercept-url pattern="/resources/css/**" access="permitAll" />  
         <!--  Se limita el acceso a todas las peticiones a sesiones logeadas. -->
-         <intercept-url pattern="/**" access="isAuthenticated()" /> 
-        <!-- Se indica donde obtener la pantalla de login. Se indica donde guardar el parametro de
+      <!--  <intercept-url pattern="/**" access="isAuthenticated()" />-->
+        <!-- Se indica dónde obtener la pantalla de login. Se indica donde guardar el parámetro de
         usuario,password y mensaje de error al denegar el usuario. -->
-        <!-- <form-login  login-page="/login"
+        <form-login  login-page="/cursos"
              username-parameter="userId"
              password-parameter="password"
-             authentication-failure-url="/Access_Denied"
-             /> -->
-       <!-- Direccionamiento de deslogeo -->
-       <logout logout-url="/logout"  
+             authentication-failure-url="/cursos"/>
+       <!--  <logout logout-url="/logout"  
                 invalidate-session="true" 
-                logout-success-url="/index.jsp" />         
+                logout-success-url="/index.jsp" /> --> 
+         
         <csrf disabled="true" />
     </http>
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN" />
+                <user name="admin" password="2017#admin" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
     </authentication-manager>
-
 </b:beans>
+

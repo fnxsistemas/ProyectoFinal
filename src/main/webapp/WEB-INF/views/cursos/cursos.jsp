@@ -7,20 +7,27 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!-- Libreria para el formateo de fechas. -->
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!-- Librerias de Spring Security. -->
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
+
 
 <!-- Se incluye la cabecera del include 'header.jsp' -->
 <jsp:include page="../includes/header.jsp" />
 
 <main>
-	<!-- Enlace para crear cursos. -->
-	<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso </a>
+	<sec:authorize access="isAuthenticated()">
+		<!-- Enlace para crear cursos. -->
+		<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso </a>
 	
+	 	
 	<!-- Caja contenedor de la cabecera. -->
 	<div class="row cabecera_datos">
 		<span class="col-xs-2">Código</span>
 		<span class="col-xs-8">Nombre</span>
 	</div>
 	
+
+
 	<!-- Se comprueba si el listado de cursos no está vacio. 
 		 En tal caso se recorre la lista de cursos sobre el objeto curso.-->	
 	<c:choose>
@@ -65,6 +72,8 @@
 	
 	<!-- Enlace para crear cursos. -->
 	<a class ="btn btn-primary" href="cursos/addCurso"> Añadir Nuevo Curso</a>
+	
+		</sec:authorize> 
 </main>
 
 <!-- Se incluye el pie del include 'footer.jsp' -->
